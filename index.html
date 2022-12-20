@@ -21,19 +21,11 @@
     </audio>
     <div class="text-center bg-dark vh-100 d-flex flex-column">
         <div class="my-auto">
-            <h1 class="text-uppercase title">
-                <span>H</span>
-                <span>O</span>
-                <span>A</span>
-                <span>N</span>
-                <span>G</span>
-                <span>T</span>
-                <span>R</span>
-                <span>A</span>
-                <span>N</span>
-            </h1>
-            <p class="text-white-50 text-uppercase">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat,
-                cumque!</p>
+            <h1 class=" display-1 text-uppercase" id="rolling">HOANG TRAN</h1>
+            <p class="text-white-50 text-uppercase">Click & turn on your volume & enjoy the music. <br> Love
+                it? follow
+                me 💖
+            </p>
         </div>
         <div class="col-md-8 mx-auto text-white" id="BottomNav">
             <div class="d-flex justify-content-evenly align-items-center md-5 text-uppercase">
@@ -60,6 +52,18 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
     <script>
+        var rc = document.getElementById('rolling')
+        var text = rc.innerText.trim()
+        var len = text.length
+        var grp = len / 2
+        var html = ""
+        while (len > -1) {
+            var txt = text.charAt(len)
+            html = `<span style="animation-delay:${len / grp}s" class="indchar ${txt.trim() === "" ? "" : "d-inline-block"} ">${txt}</span>${html}`
+            len--
+        }
+        rc.innerHTML = html
+
         var audioEnabled = false
         var wik = document.querySelector('#wik')
         var navLinks = document.querySelectorAll('.nav-link')

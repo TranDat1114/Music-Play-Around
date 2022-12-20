@@ -1,5 +1,12 @@
  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+ @media screen and (max-width:752px) {
+     #bottomNav {
+         transform: translateY(100%);
+         opacity: 0
+     }
+ }
+
  * {
      padding: 0;
      margin: 0;
@@ -8,7 +15,12 @@
 
  }
 
+ html {
+     overflow-x: hidden;
+ }
+
  p {
+     letter-spacing: 7px;
      font-size: 18px;
      max-width: 73ch;
      position: absolute;
@@ -16,11 +28,17 @@
      transform: translateX(-50%);
  }
 
- .title {
+ #rolling {
      font-size: 90px;
      color: #548da8;
-     font-weight: 300;
+     font-weight: 400;
+     letter-spacing: 20px;
+ }
 
+ .indchar {
+     animation: rt 2s 1 ease-in-out;
+     opacity: 0;
+     animation-fill-mode: forwards;
  }
 
  #BottomNav {
@@ -38,12 +56,14 @@
      content: '\263C';
      opacity: 0;
      color: #cecece;
+     transition: opacity 200ms linear;
  }
 
  .nav-link::after {
      content: '\263C';
      color: #cecece;
      opacity: 0;
+     transition: opacity 200ms linear;
  }
 
  .nav-link:hover {
@@ -53,4 +73,20 @@
  .nav-link:hover::before,
  .nav-link:hover::after {
      opacity: 1;
+ }
+
+ @keyframes rt {
+     0% {
+         opacity: 0;
+     }
+
+     50% {
+         transform: rotateZ(180deg) translateX(-200px)
+     }
+
+     100% {
+         transform: rotateZ(360deg);
+         opacity: 1;
+         color: #548da8
+     }
  }
