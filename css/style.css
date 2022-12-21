@@ -1,11 +1,19 @@
  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
- @media screen and (max-width:752px) {
-     #bottomNav {
-         transform: translateY(100%);
-         opacity: 0
+ @media screen and (max-width: 554px) {
+     #rolling {
+         font-size: 72px !important;
+     }
+
+     #rolling {
+         font-size: 60px;
      }
  }
+
+ p {
+     font-size: 16px !important;
+ }
+
 
  * {
      padding: 0;
@@ -17,12 +25,14 @@
 
  html {
      overflow-x: hidden;
+     scroll-behavior: smooth;
  }
 
  p {
      letter-spacing: 7px;
      font-size: 18px;
      max-width: 73ch;
+     line-height: 150%;
      position: absolute;
      left: 50%;
      transform: translateX(-50%);
@@ -33,6 +43,7 @@
      color: #548da8;
      font-weight: 400;
      letter-spacing: 20px;
+     transform: translateY(-50%);
  }
 
  .indchar {
@@ -42,7 +53,7 @@
  }
 
  #BottomNav {
-     transition: all 300ms linear;
+     transition: all 400ms linear;
      margin-bottom: 48px !important;
  }
 
